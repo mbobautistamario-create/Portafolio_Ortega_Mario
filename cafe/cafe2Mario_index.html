@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - El Restó & Café de Mario</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: #1a1614; color: #f5f0eb; line-height: 1.6; }
+        
+        /* Header y Navegación */
+        header { background: #261f1c; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d4a373; position: sticky; top: 0; z-index: 10; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #d4a373; text-decoration: none; }
+        nav a { color: #f5f0eb; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: 0.3s; }
+        nav a:hover, nav a.activo { color: #d4a373; border-bottom: 2px solid #d4a373; padding-bottom: 2px; }
+
+        section { padding: 3.5rem 5%; max-width: 1100px; margin: auto; }
+        h1, h2 { text-align: center; color: #d4a373; margin-bottom: 2rem; font-size: 2.2rem; border-bottom: 2px solid #3d312a; padding-bottom: 0.5rem; }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .card { background: #261f1c; border-radius: 10px; overflow: hidden; border: 1px solid #3d312a; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: #d4a373; }
+        .card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+        .card-info { padding: 1.2rem; }
+        .card-info h3 { color: #faedcd; margin-bottom: 0.5rem; }
+        .precio { color: #d4a373; font-weight: bold; font-size: 1.3rem; margin-top: 0.8rem; display: block; }
+
+        /* Formulario de Reserva */
+        .form-container { background: #261f1c; padding: 2rem; border-radius: 10px; border: 1px solid #3d312a; max-width: 700px; margin: auto; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; color: #faedcd; font-weight: bold; margin-bottom: 0.4rem; }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid #3d312a; background: #1a1614; color: #f5f0eb; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #d4a373; }
+        .btn-submit { width: 100%; background: #d4a373; color: #1a1614; padding: 0.9rem; font-weight: bold; font-size: 1.05rem; border: none; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: #faedcd; }
+
+        footer { text-align: center; padding: 1.5rem; background: #120e0d; color: #888; font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid #261f1c; }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con Enlaces -->
+    <header>
+        <a href="index.html" class="logo">☕ El Restó & Café de Mario</a>
+        <nav>
+            <a href="cafeMario_index.html">Inicio</a>
+            <a href="#menu" class="activo">Ver Menú Completo</a>
+            <a href="#reserva">Reservar Mesa</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Menú -->
+    <section>
+        <h1>Nuestra Carta / Menú</h1>
+        <div class="menu-grid" id="menu">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café Espresso">
+                <div class="card-info">
+                    <h3>Café de Especialidad</h3>
+                    <p>Espresso, Capuchino o Latte elaborado con granos seleccionados.</p>
+                    <span class="precio">$2.800</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Pastelería">
+                <div class="card-info">
+                    <h3>Pastelería Artesanal</h3>
+                    <p>Medialunas de manteca recién horneadas y tortas del día.</p>
+                    <span class="precio">$3.200</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" alt="Tostado">
+                <div class="card-info">
+                    <h3>Tostado Completo</h3>
+                    <p>Pan de campo artesanal con jamón, queso dambo y huevo revuelto.</p>
+                    <span class="precio">$5.500</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Almuerzo">
+                <div class="card-info">
+                    <h3>Almuerzo / Ensalada Gourmet</h3>
+                    <p>Platos del día caseros, sándwiches gourmet y opciones saludables.</p>
+                    <span class="precio">$8.500</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Reserva -->
+    <section id="reserva">
+        <h2>Reservá tu Mesa</h2>
+        <div class="form-container">
+            <form onsubmit="alert('¡Reserva enviada con éxito!'); return false;">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label for="personas">¿Para cuántas personas?</label>
+                    <select id="personas">
+                        <option value="1-2">1 a 2 personas</option>
+                        <option value="3-4">3 a 4 personas</option>
+                        <option value="5+">5 o más personas</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Confirmar Reserva</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 El Restó & Café de Mario - Sitios Multipágina HTML y CSS.</p>
+    </footer>
+
+</body>
+</html>

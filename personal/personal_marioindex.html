@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Profesional - Desarrollador Web Freelance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e293b;
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #38bdf8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-box {
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 1.2rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            font-size: 0.85rem;
+            color: #38bdf8;
+            display: block;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        .sobre-mi-box {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .sobre-mi-box p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        article.proyecto {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        article.proyecto:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .tag-proyecto {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            width: fit-content;
+        }
+
+        article.proyecto h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+
+        article.proyecto p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .habilidades-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            list-style: none;
+        }
+
+        .habilidad-item {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            transition: border-color 0.3s ease;
+        }
+
+        .habilidad-item:hover {
+            border-color: #38bdf8;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+        }
+
+        footer {
+            background-color: #020617;
+            border-top: 1px solid #1e293b;
+            padding: 2.5rem 8%;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: #38bdf8;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contacto-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .contacto-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contacto-links a:hover {
+            color: #38bdf8;
+        }
+
+        .copy {
+            font-size: 0.85rem;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#sobre-mi" class="logo">
+            <div class="logo-box">&lt;DEV/&gt;</div>
+            <div class="logo-text">
+                <h1>Mario Rossi</h1>
+                <span>Desarrollador Web</span>
+            </div>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <div class="sobre-mi-box">
+                <p>¡Hola! Soy un apasionado desarrollador web freelance especializado en crear experiencias digitales modernas, funcionales e interactivas. Me enfoco en escribir código limpio, semántico y responsive para ayudar a empresas y emprendedores a hacer crecer su presencia en internet.</p>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos Realizados</h2>
+            <div class="proyectos-grid">
+
+                <article class="proyecto">
+                    <div>
+                        <span class="tag-proyecto">Página Web</span>
+                        <h3>Sitio Web Institucional</h3>
+                        <p>Desarrollo multipágina completo para una marca comercial, con diseño totalmente responsive, optimización SEO y formularios interactivas.</p>
+                    </div>
+                </article>
+
+                <article class="proyecto">
+                    <div>
+                        <span class="tag-proyecto">Aplicación</span>
+                        <h3>App de Gestión de Tareas</h3>
+                        <p>Aplicación web dinámica que permite a los usuarios organizar proyectos, establecer recordatorios y visualizar su productividad diaria.</p>
+                    </div>
+                </article>
+
+                <article class="proyecto">
+                    <div>
+                        <span class="tag-proyecto">Videojuego</span>
+                        <h3>Juego Web 2D Arcade</h3>
+                        <p>Videojuego interactivo desarrollado en Python puro con lógica de colisiones, contadores de puntuación y animaciones dinámicas.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades Técnicas</h2>
+            <ul class="habilidades-lista">
+                <li class="habilidad-item"><span class="dot"></span> HTML</li>
+                <li class="habilidad-item"><span class="dot"></span> CSS</li>
+                <li class="habilidad-item"><span class="dot"></span> Python</li>
+                <li class="habilidad-item"><span class="dot"></span> JavaScript</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <h3>Contacto Profesional</h3>
+        <div class="contacto-links">
+            <p>📧 <strong>Email:</strong> <a href="mailto:mbo.bautista.mario@email.com">desarrollador@email.com</a></p>
+            <p>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">linkedin.com/in/desarrollador</a></p>
+            <p>💻 <strong>GitHub:</strong> <a href="https://github.com" target="_blank">github.com/desarrollador</a></p>
+        </div>
+        <div class="copy">
+            <p>&copy; 2026 Portfolio Profesional - Programación III (6to Año "A"). Prof. Toledo, Verónica E.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

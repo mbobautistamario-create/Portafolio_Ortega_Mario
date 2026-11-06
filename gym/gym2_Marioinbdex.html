@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios de Clases - PowerFit</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: #0d0d0d; color: #f0f0f0; line-height: 1.6; }
+        
+        /* Header y Navegación */
+        header { background: #161616; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ccff00; position: sticky; top: 0; z-index: 10; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #ccff00; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; }
+        nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover, nav a.activo { color: #ccff00; border-bottom: 2px solid #ccff00; padding-bottom: 3px; }
+
+        section { padding: 3.5rem 5%; max-width: 1100px; margin: auto; }
+        h1, h2 { text-align: center; color: #ccff00; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #222; padding-bottom: 0.5rem; }
+
+        /* Tarjetas de Clases */
+        .grid-clases { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .card { background: #181818; border-radius: 10px; overflow: hidden; border: 1px solid #2a2a2a; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: #ccff00; }
+        .card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+        .card-info { padding: 1.2rem; }
+        .card-info h3 { color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; }
+        .profe { color: #888; font-size: 0.85rem; display: block; margin-bottom: 0.5rem; }
+
+        /* Tabla de Horarios Semanales */
+        .tabla-container { overflow-x: auto; background: #181818; padding: 1.5rem; border-radius: 10px; border: 1px solid #2a2a2a; }
+        table { width: 100%; border-collapse: collapse; text-align: center; min-width: 600px; }
+        th, td { padding: 1rem; border: 1px solid #2a2a2a; }
+        th { background: #222; color: #ccff00; text-transform: uppercase; font-size: 0.9rem; }
+        td { color: #ddd; font-size: 0.95rem; }
+        tr:nth-child(even) { background: #121212; }
+
+        footer { text-align: center; padding: 1.5rem; background: #050505; color: #777; font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid #1a1a1a; }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con Enlaces -->
+    <header>
+        <a href="gym_Marioindex.html" class="logo">⚡ POWERFIT</a>
+        <nav>
+            <a href="gym_Marioindex.html">Inicio</a>
+            <a href="gym2_Marioinbdex.html" class="activo">Clases & Horarios</a>
+            <a href="gym_Marioindex.html#pase-gratis">Pase Gratis</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Clases -->
+    <section>
+        <h1>Nuestras Actividades</h1>
+        <div class="grid-clases">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Musculación">
+                <div class="card-info">
+                    <h3>Musculación & Pesas</h3>
+                    <span class="profe">👨‍🏫 Instructores en sala continuos</span>
+                    <p>Zona completa de máquinas, mancuernas y barras con seguimiento.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Crossfit">
+                <div class="card-info">
+                    <h3>Cross Training / Funcional</h3>
+                    <span class="profe">👨‍🏫 Prof. Carlos M.</span>
+                    <p>Alta intensidad para potenciar resistencia, velocidad y agilidad.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=600&q=80" alt="Spinning">
+                <div class="card-info">
+                    <h3>Spinning / Indoor Cycling</h3>
+                    <p>Entrenamiento cardiovascular intenso con música motivadora.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=600&q=80" alt="Yoga">
+                <div class="card-info">
+                    <h3>Yoga & Flexibilidad</h3>
+                    <p>Posturas y estiramientos para mejorar la movilidad articular.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tabla Semanal de Horarios -->
+        <h2>Grilla de Horarios Semanal</h2>
+        <div class="tabla-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                        <th>Sábado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>08:00 hs</b></td>
+                        <td>Spinning</td>
+                        <td>Crossfit</td>
+                        <td>Spinning</td>
+                        <td>Crossfit</td>
+                        <td>Spinning</td>
+                        <td>Musculación</td>
+                    </tr>
+                    <tr>
+                        <td><b>10:00 hs</b></td>
+                        <td>Musculación</td>
+                        <td>Musculación</td>
+                        <td>Musculación</td>
+                        <td>Musculación</td>
+                        <td>Musculación</td>
+                        <td>Yoga</td>
+                    </tr>
+                    <tr>
+                        <td><b>18:00 hs</b></td>
+                        <td>Crossfit</td>
+                        <td>Spinning</td>
+                        <td>Crossfit</td>
+                        <td>Spinning</td>
+                        <td>Crossfit</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><b>20:00 hs</b></td>
+                        <td>Spinning</td>
+                        <td>Crossfit</td>
+                        <td>Spinning</td>
+                        <td>Crossfit</td>
+                        <td>Funcional</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PowerFit Gym - Sitios Multipágina HTML y CSS.</p>
+    </footer>
+
+</body>
+</html>

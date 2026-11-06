@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit - Gimnasio & Entrenamiento</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: #0d0d0d; color: #f0f0f0; line-height: 1.6; }
+        
+        /* Header y Navegación */
+        header { background: #161616; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #ccff00; position: sticky; top: 0; z-index: 10; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #ccff00; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; }
+        nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover, nav a.activo { color: #ccff00; border-bottom: 2px solid #ccff00; padding-bottom: 3px; }
+
+        /* Hero */
+        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80') center/cover; text-align: center; padding: 6rem 1rem; color: white; }
+        .hero h1 { font-size: 3.2rem; color: #ccff00; font-weight: 900; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.2rem; color: #ccc; max-width: 600px; margin: 0 auto 1.5rem; }
+        .btn-cta { display: inline-block; background: #ccff00; color: #000; padding: 0.8rem 1.8rem; font-weight: 800; text-decoration: none; border-radius: 5px; text-transform: uppercase; transition: 0.3s; margin: 0.3rem; }
+        .btn-cta:hover { background: #a3cc00; transform: scale(1.05); }
+        .btn-secundario { background: transparent; color: #ccff00; border: 2px solid #ccff00; }
+        .btn-secundario:hover { background: #ccff00; color: #000; }
+
+        section { padding: 3.5rem 5%; max-width: 1100px; margin: auto; }
+        h2 { text-align: center; color: #ccff00; margin-bottom: 2rem; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #222; padding-bottom: 0.5rem; }
+
+        /* Formulario Pase Gratis */
+        .form-container { background: #181818; padding: 2rem; border-radius: 10px; border: 1px solid #2a2a2a; max-width: 700px; margin: auto; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; color: #ccff00; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 0.4rem; }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid #333; background: #0d0d0d; color: #fff; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #ccff00; }
+        .btn-submit { width: 100%; background: #ccff00; color: #000; padding: 0.9rem; font-weight: 900; font-size: 1.1rem; border: none; border-radius: 5px; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .btn-submit:hover { background: #a3cc00; }
+
+        /* Info & Contacto */
+        .info-container { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; background: #181818; padding: 2rem; border-radius: 10px; border: 1px solid #2a2a2a; }
+        .info-box { flex: 1; min-width: 250px; }
+        .info-box h3 { color: #ccff00; margin-bottom: 1rem; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 1.5rem; background: #050505; color: #777; font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid #1a1a1a; }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con Enlaces -->
+    <header>
+        <a href="gym_Marioindex.html" class="logo">⚡ POWERFIT</a>
+        <nav>
+            <a href="gym_Marioindex.html" class="activo">Inicio</a>
+            <a href="gym2_Marioinbdex.html">Clases & Horarios</a>
+            <a href="#pase-gratis">Pase Gratis</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h1>TRANSFORMA TU CUERPO</h1>
+        <p>El centro de entrenamiento más completo. Superá tus límites con nuestros entrenadores calificados.</p>
+        <a href="gym2_Marioinbdex.html" class="btn-cta btn-secundario">Ver Horarios de Clases</a>
+        <a href="#pase-gratis" class="btn-cta">¡Pases Gratis de 1 Día!</a>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros">
+        <h2>Por qué elegir PowerFit</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: #bbb;">
+            En <b>PowerFit</b> contamos con equipamiento de última generación, área de musculación completa, rutinas personalizadas adaptadas a tus objetivos y un ambiente de entrenamiento motivador para todos los niveles.
+        </p>
+    </section>
+
+    <!-- Cuestionario / Pase Gratis -->
+    <section id="pase-gratis">
+        <h2>Pedí tu Pase Gratis por 1 Día</h2>
+        <div class="form-container">
+            <form onsubmit="alert('¡Excelente! Te contactaremos por WhatsApp con tu pase de entrenamiento.'); return false;">
+                <div class="form-group">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre" placeholder="Ej: Lucas Gómez" required>
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp / Teléfono:</label>
+                    <input type="tel" id="whatsapp" placeholder="Ej: 351 123 4567" required>
+                </div>
+                <div class="form-group">
+                    <label for="objetivo">¿Cuál es tu objetivo principal?</label>
+                    <select id="objetivo">
+                        <option value="fuerza">Ganar masa muscular / Fuerza</option>
+                        <option value="peso">Bajar de peso / Definición</option>
+                        <option value="resistencia">Mejorar resistencia física</option>
+                        <option value="salud">Salud y liberar estrés</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Solicitar Mi Pase Gratis</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contacto e Instalaciones -->
+    <section id="contacto">
+        <h2>Ubicación e Instalaciones</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <h3>📍 Dirección & Contacto</h3>
+                <p><b>Dirección:</b> Av. San Martín 850, Centro</p>
+                <p><b>WhatsApp:</b> +54 9 351 555-8899</p>
+                <p><b>Email:</b> contacto@powerfit.com</p>
+            </div>
+            <div class="info-box">
+                <h3>📲 Redes Sociales</h3>
+                <p><b>Instagram:</b> @powerfit.gym</p>
+                <p><b>Facebook:</b> /powerfitgymok</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PowerFit Gym - Sitios Multipágina HTML y CSS.</p>
+    </footer>
+
+</body>
+</html>

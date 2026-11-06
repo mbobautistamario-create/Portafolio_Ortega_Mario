@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoStore - Tu Tienda de Tecnología</title>
+    <style>
+        /* Reset y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Azul noche tecnológico */
+            color: #f1f5f9; /* Texto claro */
+            line-height: 1.6;
+        }
+
+        /* HEADER Y NAVEGACIÓN */
+        header {
+            background-color: #1e293b; /* Gris azulado oscuro */
+            border-bottom: 2px solid #38bdf8; /* Detalle azul neón */
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Logo diseñado con HTML/CSS */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo-icono {
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            color: #ffffff;
+            padding: 0.4rem 0.7rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+        }
+
+        .logo span {
+            color: #38bdf8; /* Azul cian */
+        }
+
+        /* Menú de Navegación */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* CONTENIDO PRINCIPAL (MAIN) */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #38bdf8;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        /* SECTION: PRODUCTOS (Cuadrícula Grid) */
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* ARTÍCULOS (Bordes y Tarjetas) */
+        article.producto {
+            background-color: #1e293b;
+            border: 2px solid #334155; /* Borde discreto gris-azul */
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        article.producto:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8; /* Borde azul al pasar el mouse */
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background-color: #0f172a;
+        }
+
+        .producto h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .producto p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .precio {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        /* SECTION: OFERTA ESPECIAL */
+        .oferta-especial {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 2px solid #0284c7;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 0 25px rgba(2, 132, 199, 0.25);
+        }
+
+        .oferta-contenido {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .oferta-imagen {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .oferta-imagen img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid #38bdf8;
+        }
+
+        .oferta-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .badge-oferta {
+            display: inline-block;
+            background-color: #e11d48; /* Rojo destacado */
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .oferta-info h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .oferta-info p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .precios-oferta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .precio-original {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: 1.2rem;
+        }
+
+        .precio-oferta {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #4ade80; /* Verde oferta */
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #020617;
+            border-top: 1px solid #1e293b;
+            padding: 2rem 5%;
+            color: #94a3b8;
+        }
+
+        .footer-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-info h4 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-info p {
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-copy {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #1e293b;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <!-- Logo diseñado con HTML y CSS -->
+        <a href="#inicio" class="logo">
+            <div class="logo-icono">&lt;/&gt;</div>
+            Tecno<span>Store</span>
+        </a>
+
+        <!-- NAV -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main id="inicio">
+
+        <!-- SECTION: PRODUCTOS -->
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-grid">
+
+                <!-- Artículo 1: Notebook -->
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80" alt="Notebook Pro">
+                    <h3>Notebook Pro 15"</h3>
+                    <p>Procesador Intel i7 de última generación, 16GB RAM y disco SSD de 512GB. Ideal para trabajo y estudio.</p>
+                    <span class="precio">$850.000 ARS</span>
+                </article>
+
+                <!-- Artículo 2: Celular -->
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Smartphone X">
+                    <h3>Smartphone Tecno X</h3>
+                    <p>Pantalla AMOLED de 6.7", cámara triple de 108MP y batería de larga duración con carga rápida de 67W.</p>
+                    <span class="precio">$420.000 ARS</span>
+                </article>
+
+                <!-- Artículo 3: Auriculares -->
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Auriculares Bluetooth">
+                    <h3>Auriculares Wireless</h3>
+                    <p>Cancelación de ruido activa, conexión Bluetooth 5.3 y hasta 30 horas de autonomía continua.</p>
+                    <span class="precio">$78.000 ARS</span>
+                </article>
+
+                <!-- Artículo 4: Teclado -->
+                <article class="producto">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Teclado Mecánico">
+                    <h3>Teclado Mecánico RGB</h3>
+                    <p>Switches Red silenciosos, retroiluminación RGB personalizable y estructura de aluminio reforzado.</p>
+                    <span class="precio">$52.000 ARS</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECTION: OFERTA ESPECIAL -->
+        <section id="ofertas" class="oferta-especial">
+            <h2>🔥 Oferta Especial de la Semana</h2>
+            <div class="oferta-contenido">
+                <div class="oferta-imagen">
+                    <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80" alt="Setup Gamer y Monitor">
+                </div>
+                <div class="oferta-info">
+                    <span class="badge-oferta">25% OFF - Tiempo Limitado</span>
+                    <h3>Monitor Gamer Curved 27" 165Hz</h3>
+                    <p>Pantalla curva Full HD con 1ms de tiempo de respuesta y tecnología FreeSync Premium para una experiencia de juego ultra fluida.</p>
+                    <div class="precios-oferta">
+                        <span class="precio-original">$360.000 ARS</span>
+                        <span class="precio-oferta">$270.000 ARS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-contenido">
+            <div class="footer-info">
+                <h4>📍 Ubicación</h4>
+                <p>Av. Tecnología 404, Piso 2</p>
+                <p>Córdoba, Argentina</p>
+            </div>
+            <div class="footer-info">
+                <h4>🕒 Horarios de Atención</h4>
+                <p>Lunes a Viernes: 09:00 a 19:00 hs</p>
+                <p>Sábados: 09:00 a 13:00 hs</p>
+            </div>
+            <div class="footer-info">
+                <h4>📞 Contacto</h4>
+                <p>Email: ventas@tecnostore.com</p>
+                <p>Teléfono: +54 9 351 999-8877</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 TecnoStore - Desarrollado para Programación III (6to Año "A"). Prof. Toledo, Verónica E.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

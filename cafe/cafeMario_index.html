@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - El Restó & Café de Mario</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: #1a1614; color: #f5f0eb; line-height: 1.6; }
+        
+        /* Header y Navegación */
+        header { background: #261f1c; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d4a373; position: sticky; top: 0; z-index: 10; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #d4a373; text-decoration: none; }
+        nav a { color: #f5f0eb; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: 0.3s; }
+        nav a:hover, nav a.activo { color: #d4a373; border-bottom: 2px solid #d4a373; padding-bottom: 2px; }
+
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover; text-align: center; padding: 6rem 1rem; color: white; }
+        .hero h1 { font-size: 3rem; color: #faedcd; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.2rem; color: #ccd5ae; margin-bottom: 1.5rem; }
+        .btn-ver-menu { display: inline-block; background: #d4a373; color: #1a1614; padding: 0.8rem 1.8rem; font-weight: bold; text-decoration: none; border-radius: 5px; transition: 0.3s; }
+        .btn-ver-menu:hover { background: #faedcd; }
+
+        section { padding: 3.5rem 5%; max-width: 1100px; margin: auto; }
+        h2 { text-align: center; color: #d4a373; margin-bottom: 2rem; font-size: 2rem; border-bottom: 2px solid #3d312a; padding-bottom: 0.5rem; }
+
+        .info-container { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; background: #261f1c; padding: 2rem; border-radius: 10px; border: 1px solid #3d312a; }
+        .info-box { flex: 1; min-width: 250px; }
+        .info-box h3 { color: #faedcd; margin-bottom: 1rem; }
+
+        footer { text-align: center; padding: 1.5rem; background: #120e0d; color: #888; font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid #261f1c; }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con Enlaces a Otras Páginas -->
+    <header>
+        <a href="index.html" class="logo">☕ El Restó & Café de Mario</a>
+        <nav>
+            <a href="cafeMario_index.html" class="activo">Inicio</a>
+            <a href="cafe2Mario_index.html">Ver Menú Completo</a>
+            <a href="cafe2Mario_index.html">Reservar Mesa</a>
+        </nav>
+    </header>
+
+    <!-- Presentación -->
+    <section class="hero">
+        <h1>Bienvenidos a El Restó & Café de Mario</h1>
+        <p>El mejor café de especialidad, desayunos, meriendas y platos caseros en un ambiente cálido.</p>
+        <a href="cafe2Mario_index.html" class="btn-ver-menu">Ir al Menú de Productos ➔</a>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros">
+        <h2>Nuestra Historia</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: #d5cea3;">
+            En <b>El Restó & Café de Mario</b> nos apasiona la buena gastronomía. Nacimos como un pequeño emprendimiento familiar enfocado en brindar productos de calidad, café recién molido y la calidez de sentirte como en casa.
+        </p>
+    </section>
+
+    <!-- Contacto e Información -->
+    <section id="contacto">
+        <h2>Visítanos</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <h3>📍 Ubicación y Horarios</h3>
+                <p><b>Dirección:</b> Av. Principal 1234, Centro</p>
+                <p><b>Horario:</b> Lunes a Sábados de 07:30 a 21:00 hs.</p>
+            </div>
+            <div class="info-box">
+                <h3>📲 Redes Sociales</h3>
+                <p><b>Instagram:</b> @resto.cafedemario</p>
+                <p><b>Facebook:</b> El Restó y Café de Mario</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 El Restó & Café de Mario - Sitios Multipágina HTML y CSS.</p>
+    </footer>
+
+</body>
+</html>
